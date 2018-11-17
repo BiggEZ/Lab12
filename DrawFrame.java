@@ -36,25 +36,28 @@ public class DrawFrame extends JFrame
         
         
         // Base head:
-        Circle base = new Circle(new Point(400, 300), 350, Color.GRAY, true);
+        Circle base = new Circle(new Point(400, 300), 350, Color.BLACK, true);
         Circle circleOutline = new Circle(new Point(400, 300), 567, Color.BLACK, false);
         
         // Ears:
-        RightTriangle leftEar = new RightTriangle(new Point(500, 175), -30, -120, Color.GRAY, true);
+        RightTriangle leftEar = new RightTriangle(new Point(500, 175), -30, -120, Color.BLACK, true);
         RightTriangle leftEarPink = new RightTriangle(new Point(495, 175), -15, -100, Color.PINK, true);
-        RightTriangle rightEar = new RightTriangle(new Point(295, 175), 30, -120, Color.GRAY, true);
+        RightTriangle rightEar = new RightTriangle(new Point(295, 175), 30, -120, Color.BLACK, true);
         RightTriangle rightEarPink = new RightTriangle(new Point(300, 175), 15, -100, Color.PINK, true);
         
         // Eyes:
-        Oval leftEye = new Oval(new Point(475, 210), 60, 60, Color.WHITE, true);
+        Oval leftEye = new Oval(new Point(475, 210), 60, 60, Color.YELLOW, true);
         Oval leftIris = new Oval(new Point(475, 210), 30, 60, Color.BLACK, true);
-        Oval rightEye = new Oval(new Point(325, 210), 60, 60, Color.WHITE, true);
+        Oval rightEye = new Oval(new Point(325, 210), 60, 60, Color.YELLOW, true);
         Oval rightIris = new Oval(new Point(325, 210), 30, 60, Color.BLACK, true);
         
+        PolyLine rightEyeLid = new PolyLine(new Point(290, 170), new Point(370, 190), 20, Color.BLACK, true);
+        PolyLine leftEyeLid = new PolyLine(new Point(430, 190), new Point(510, 170), 20, Color.BLACK, true);
+        
         // Nose and Whiskers:
-        Circle nose = new Circle(new Point(400, 300), 30, Color.BLACK, true);
-        PolyLine rightMouth = new PolyLine(new Point(300, 320), new Point(400, 350), 45, Color.BLACK, true);
-        PolyLine leftMouth = new PolyLine(new Point(400, 350), new Point(500, 320), 45, Color.BLACK, true);
+        Circle nose = new Circle(new Point(400, 300), 30, Color.RED, true);
+        PolyLine rightMouth = new PolyLine(new Point(300, 320), new Point(400, 350), 45, Color.PINK, true);
+        PolyLine leftMouth = new PolyLine(new Point(400, 350), new Point(500, 320), 45, Color.PINK, true);
         Oval tongue = new Oval(new Point(425, 400), 50, 70, Color.RED, true);
         
         // Collar:
@@ -87,6 +90,8 @@ public class DrawFrame extends JFrame
         drawPanel.addShape(collar);
         drawPanel.addShape(collarRed);
         drawPanel.addShape(collarRing);
+        drawPanel.addShape(rightEyeLid);
+        drawPanel.addShape(leftEyeLid);
         
         // set background color
         drawPanel.setBackground(Color.WHITE);
